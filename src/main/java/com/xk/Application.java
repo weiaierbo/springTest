@@ -5,6 +5,7 @@ import com.xk.config.MyConfig2;
 import com.xk.config.MyConfigAutowired;
 import com.xk.dao.MyDao;
 import com.xk.service.MyService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,6 +15,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * @author kai.xu
  * @create 2020-12-28 17:32
  */
+@Slf4j
 public class Application {
 
     public static void main(String[] args){
@@ -26,6 +28,7 @@ public class Application {
         }
         Object bean = applicationContext.getBean("person2");
         System.out.println(bean);
+        log.info("----{}",bean);
         applicationContext.close();
     }
 
